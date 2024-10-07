@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/ProductCard'; // Importa el nuevo componente
 
 const Home = () => {
     const [productos, setProductos] = useState([]);
@@ -48,10 +49,7 @@ const Home = () => {
             <h1>Bienvenido a nuestro Catálogo</h1>
             <div style={styles.productGrid}>
                 {productos.map(product => (
-                    <div key={product.id} style={styles.productCard}>
-                        <img src={product.image} alt={product.name} style={styles.productImage} />
-                        <h3 style={styles.productName}>{product.name}</h3>
-                    </div>
+                    <ProductCard key={product.id} product={product} />
                 ))}
             </div>
         </div>
